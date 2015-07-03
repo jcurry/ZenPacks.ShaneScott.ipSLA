@@ -15,10 +15,28 @@ that the component template for automatic binding, shall reflect rttMonCtrlAdmin
 this means templates called Echo, HTTP, Jitter and New_SLA.
 
 The SLAs component is created as a subclass of the existing OSComponent class.  No new device object class
-is created and the __init__.py decalres the relationship between the new SLAs component and the OperatingSystem
+is created and the __init__.py declares the relationship between the new SLAs component and the OperatingSystem
 component.
 
-A new device class, /Network/Cisco/IPSLA is created whith modeler plugins assigned, including the SLA modeler.
+A new device class, /Network/Cisco/IPSLA is created with modeler plugins assigned, including the SLA modeler.
+
+Requirements & Dependencies
+===========================
+
+    * Zenoss Versions Supported: 4.x - tested against Zenoss Core 4.2.5 SUP 457
+    * External Dependencies:
+    * ZenPack Dependencies: 
+    * Installation Notes: Restart zenoss
+    * Configuration:
+
+
+Download
+========
+Download the appropriate package for your Zenoss version from the list
+below.
+
+* Zenoss 4.0+ `Latest Package for Python 2.7`_
+
 
 
 Change History
@@ -36,5 +54,8 @@ Screenshots
 See the screenshots directory
 
 
+.. External References Below. Nothing Below This Line Should Be Rendered
+
+.. _Latest Package for Python 2.7: https://github.com/jcurry/ZenPacks.ShaneScott.ipSLA/blob/master/dist/ZenPacks.ShaneScott.ipSLA-3.5.2-py2.7.egg?raw=true
 
 
