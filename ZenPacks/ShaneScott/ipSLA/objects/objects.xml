@@ -7,6 +7,9 @@
 </property>
 <tomanycont id='rrdTemplates'>
 <object id='Echo' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
+<property type="string" id="targetPythonClass" mode="w" >
+Products.ZenModel.Device
+</property>
 <tomanycont id='datasources'>
 <object id='rttMonLatestRttOperApplSpecificSense' module='ZenPacks.ShaneScott.ipSLA.datasources.SLADataSource' class='SLADataSource'>
 <property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
@@ -14,6 +17,9 @@ SLA
 </property>
 <property type="boolean" id="enabled" mode="w" >
 True
+</property>
+<property type="string" id="component" mode="w" >
+${here/id}
 </property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
@@ -49,6 +55,9 @@ SLA
 <property type="boolean" id="enabled" mode="w" >
 True
 </property>
+<property type="string" id="component" mode="w" >
+${here/id}
+</property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
 </property>
@@ -83,6 +92,9 @@ SLA
 <property type="boolean" id="enabled" mode="w" >
 True
 </property>
+<property type="string" id="component" mode="w" >
+${here/id}
+</property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
 </property>
@@ -116,6 +128,9 @@ SLA
 </property>
 <property type="boolean" id="enabled" mode="w" >
 True
+</property>
+<property type="string" id="component" mode="w" >
+${here/id}
 </property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
@@ -202,8 +217,14 @@ COMMENT:\\s
 <property type="boolean" id="hasSummary" mode="w" >
 True
 </property>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <tomanycont id='graphPoints'>
 <object id='rttMonLatestRttOperCompletionTime' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -326,6 +347,9 @@ AVERAGE
 </property>
 </object>
 <object id='rttMonLatestRttOperSense' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -356,6 +380,9 @@ AVERAGE
 </tomanycont>
 </object>
 <object id='HTTP' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
+<property id='zendoc' type='string'>
+HTTP SLA Template
+</property>
 <property type="text" id="description" mode="w" >
 HTTP SLA Template
 </property>
@@ -369,6 +396,9 @@ SLA
 </property>
 <property type="boolean" id="enabled" mode="w" >
 True
+</property>
+<property type="string" id="component" mode="w" >
+${here/id}
 </property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
@@ -404,6 +434,9 @@ SLA
 <property type="boolean" id="enabled" mode="w" >
 True
 </property>
+<property type="string" id="component" mode="w" >
+${here/id}
+</property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
 </property>
@@ -437,6 +470,9 @@ SLA
 </property>
 <property type="boolean" id="enabled" mode="w" >
 True
+</property>
+<property type="string" id="component" mode="w" >
+${here/id}
 </property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
@@ -472,6 +508,9 @@ SLA
 <property type="boolean" id="enabled" mode="w" >
 True
 </property>
+<property type="string" id="component" mode="w" >
+${here/id}
+</property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
 </property>
@@ -505,6 +544,9 @@ SLA
 </property>
 <property type="boolean" id="enabled" mode="w" >
 True
+</property>
+<property type="string" id="component" mode="w" >
+${here/id}
 </property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
@@ -540,6 +582,9 @@ SLA
 <property type="boolean" id="enabled" mode="w" >
 True
 </property>
+<property type="string" id="component" mode="w" >
+${here/id}
+</property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
 </property>
@@ -573,6 +618,9 @@ SLA
 </property>
 <property type="boolean" id="enabled" mode="w" >
 True
+</property>
+<property type="string" id="component" mode="w" >
+${here/id}
 </property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
@@ -608,6 +656,9 @@ SLA
 <property type="boolean" id="enabled" mode="w" >
 True
 </property>
+<property type="string" id="component" mode="w" >
+${here/id}
+</property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
 </property>
@@ -641,6 +692,9 @@ SLA
 </property>
 <property type="boolean" id="enabled" mode="w" >
 True
+</property>
+<property type="string" id="component" mode="w" >
+${here/id}
 </property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
@@ -766,6 +820,9 @@ COMMENT:\\s
 <property type="boolean" id="hasSummary" mode="w" >
 True
 </property>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <tomanycont id='graphPoints'>
 <object id='rttMonLatestHTTPOperDNSRTT' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
 <property type="long" id="sequence" mode="w" >
@@ -855,6 +912,9 @@ AVERAGE
 </property>
 </object>
 <object id='rttMonLatestRttOperCompletionTime' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -977,6 +1037,9 @@ AVERAGE
 </property>
 </object>
 <object id='rttMonLatestRttOperSense' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -1018,6 +1081,9 @@ SLA
 <property type="boolean" id="enabled" mode="w" >
 True
 </property>
+<property type="string" id="component" mode="w" >
+${here/id}
+</property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
 </property>
@@ -1051,6 +1117,9 @@ SLA
 </property>
 <property type="boolean" id="enabled" mode="w" >
 True
+</property>
+<property type="string" id="component" mode="w" >
+${here/id}
 </property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
@@ -1086,6 +1155,9 @@ SLA
 <property type="boolean" id="enabled" mode="w" >
 True
 </property>
+<property type="string" id="component" mode="w" >
+${here/id}
+</property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
 </property>
@@ -1119,6 +1191,9 @@ SLA
 </property>
 <property type="boolean" id="enabled" mode="w" >
 True
+</property>
+<property type="string" id="component" mode="w" >
+${here/id}
 </property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
@@ -1154,6 +1229,9 @@ SLA
 <property type="boolean" id="enabled" mode="w" >
 True
 </property>
+<property type="string" id="component" mode="w" >
+${here/id}
+</property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
 </property>
@@ -1187,6 +1265,9 @@ SLA
 </property>
 <property type="boolean" id="enabled" mode="w" >
 True
+</property>
+<property type="string" id="component" mode="w" >
+${here/id}
 </property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
@@ -1222,6 +1303,9 @@ SLA
 <property type="boolean" id="enabled" mode="w" >
 True
 </property>
+<property type="string" id="component" mode="w" >
+${here/id}
+</property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
 </property>
@@ -1255,6 +1339,9 @@ SLA
 </property>
 <property type="boolean" id="enabled" mode="w" >
 True
+</property>
+<property type="string" id="component" mode="w" >
+${here/id}
 </property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
@@ -1290,6 +1377,9 @@ SLA
 <property type="boolean" id="enabled" mode="w" >
 True
 </property>
+<property type="string" id="component" mode="w" >
+${here/id}
+</property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
 </property>
@@ -1323,6 +1413,9 @@ SLA
 </property>
 <property type="boolean" id="enabled" mode="w" >
 True
+</property>
+<property type="string" id="component" mode="w" >
+${here/id}
 </property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
@@ -1358,6 +1451,9 @@ SLA
 <property type="boolean" id="enabled" mode="w" >
 True
 </property>
+<property type="string" id="component" mode="w" >
+${here/id}
+</property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
 </property>
@@ -1391,6 +1487,9 @@ SLA
 </property>
 <property type="boolean" id="enabled" mode="w" >
 True
+</property>
+<property type="string" id="component" mode="w" >
+${here/id}
 </property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
@@ -1645,6 +1744,9 @@ AVERAGE
 </property>
 </object>
 <object id='rttMonLatestJitterOperMOS' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -1749,6 +1851,9 @@ True
 </property>
 <tomanycont id='graphPoints'>
 <object id='rttMonEchoAdminNumPackets' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 DONTDRAW
 </property>
@@ -1896,8 +2001,14 @@ COMMENT:\\s
 <property type="boolean" id="hasSummary" mode="w" >
 True
 </property>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <tomanycont id='graphPoints'>
 <object id='rttMonLatestRttOperCompletionTime' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -2020,6 +2131,9 @@ AVERAGE
 </property>
 </object>
 <object id='rttMonLatestRttOperSense' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -2061,6 +2175,9 @@ SLA
 <property type="boolean" id="enabled" mode="w" >
 True
 </property>
+<property type="string" id="component" mode="w" >
+${here/id}
+</property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
 </property>
@@ -2094,6 +2211,9 @@ SLA
 </property>
 <property type="boolean" id="enabled" mode="w" >
 True
+</property>
+<property type="string" id="component" mode="w" >
+${here/id}
 </property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
@@ -2129,6 +2249,9 @@ SLA
 <property type="boolean" id="enabled" mode="w" >
 True
 </property>
+<property type="string" id="component" mode="w" >
+${here/id}
+</property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
 </property>
@@ -2162,6 +2285,9 @@ SLA
 </property>
 <property type="boolean" id="enabled" mode="w" >
 True
+</property>
+<property type="string" id="component" mode="w" >
+${here/id}
 </property>
 <property type="string" id="eventClass" mode="w" >
 /Cmd/Fail
@@ -2248,8 +2374,14 @@ COMMENT:\\s
 <property type="boolean" id="hasSummary" mode="w" >
 True
 </property>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <tomanycont id='graphPoints'>
 <object id='rttMonLatestRttOperCompletionTime' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -2372,6 +2504,9 @@ AVERAGE
 </property>
 </object>
 <object id='rttMonLatestRttOperSense' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -2401,17 +2536,60 @@ AVERAGE
 </object>
 </tomanycont>
 </object>
+<object id='SLA_test' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
+<property type="string" id="targetPythonClass" mode="w" >
+Products.ZenModel.Device
+</property>
+<tomanycont id='datasources'>
+<object id='test' module='Products.ZenModel.BasicDataSource' class='BasicDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+SNMP
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="string" id="eventClass" mode="w" >
+/Cmd/Fail
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.9.9.42.1.2.10.1.2.1111
+</property>
+<property type="boolean" id="usessh" mode="w" >
+False
+</property>
+<property type="string" id="parser" mode="w" >
+Auto
+</property>
+<tomanycont id='datapoints'>
+<object id='test' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+</object>
 </tomanycont>
 </object>
 <!-- ('', 'zport', 'dmd', 'Reports', 'Performance Reports', 'ipSLA') -->
 <object id='/zport/dmd/Reports/Performance Reports/ipSLA' module='Products.ZenModel.ReportClass' class='ReportClass'>
-<object id='Packet Loss' module='Products.ZenModel.Report' class='Report'>
+<object id='Mean Opinion Score' module='Products.ZenModel.Report' class='Report'>
 </object>
-<object id='Round Trip Time' module='Products.ZenModel.Report' class='Report'>
+<object id='Packet Loss' module='Products.ZenModel.Report' class='Report'>
 </object>
 <object id='Jitter' module='Products.ZenModel.Report' class='Report'>
 </object>
-<object id='Mean Opinion Score' module='Products.ZenModel.Report' class='Report'>
+<object id='Round Trip Time' module='Products.ZenModel.Report' class='Report'>
 </object>
 </object>
 </objects>

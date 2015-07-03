@@ -1,4 +1,3 @@
-# Two changes made by Jane Curry to make this work - search for JC comments
 from pprint import pformat
 import logging
 log = logging.getLogger('zen.HubService.SLAPerformanceConfig')
@@ -65,23 +64,14 @@ class SLAPerformanceConfig(CollectorConfigService):
     def _transform_oid(self, oid, comp):
         """lookup the index"""
         index = None
-
         SLAindex_dct = getattr(comp, "SLAindex_dct", None)
-        # JC - debugging
-        # SLAindex_dct is always None
-        #self.log.info(' in _transform_oid oid is %s and comp is %s and SLAindex_dct is %s \n' % (oid, comp, SLAindex_dct))
-
         if SLAindex_dct is not None:
             for prefix, index_ in SLAindex_dct.iteritems():
                 if oid.startswith(prefix):
                     index = index_
                     break
         if index is None:
-            # JC change - ipSLAs components have their index in the instance attribute, not in snmpindex
-            #index = getattr(comp, "ifindex", comp.snmpindex)
-            index = getattr(comp, "ifindex", comp.instance)
-            #self.log.info(' in _transform_oid index is %s \n' % (index))
-
+            index = getattr(comp, "ifindex", comp.snmpindex)
         return "{0}.{1}".format(oid, index) if index else oid
 
 
@@ -120,10 +110,7 @@ class SLAPerformanceConfig(CollectorConfigService):
 
     def _createDeviceProxies(self, device):
         manage_ips = {device.manageIp: ([], False)}
-
-        # Next line changed by JC
-        #components = device.os.getMonitoredComponents(collector="zensla")
-        components = device.os.getMonitoredComponents(type="SLAs")
+        components = device.os.getMonitoredComponents(collector="zensla")
         for component in components:
             manage_ip = get_component_manage_ip(component, device.manageIp)
             if manage_ip not in manage_ips:
