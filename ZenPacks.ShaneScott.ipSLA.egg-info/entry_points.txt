@@ -1,3 +1,0 @@
-[zenoss.zenpacks]
-ZenPacks.ShaneScott.ipSLA = ZenPacks.ShaneScott.ipSLA
-
