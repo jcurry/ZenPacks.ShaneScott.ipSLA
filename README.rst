@@ -11,7 +11,7 @@ and several component templates that automatically bind to the SLA components to
 
 
 Note that the component templates are NOT named identically to the component but specify within the SLAs.py code
-that the component template for automatic binding, shall reflect rttMonCtrlAdminRttType.  In practise, 
+that the component template for automatic binding, shall reflect rttMonCtrlAdminRttType.  In practise,
 this means templates called Echo, HTTP, Jitter and New_SLA.
 
 The SLAs component is created as a subclass of the existing OSComponent class.  No new device object class
@@ -25,7 +25,7 @@ Requirements & Dependencies
 
     * Zenoss Versions Supported: 4.x - tested against Zenoss Core 4.2.5 SUP 457
     * External Dependencies:
-    * ZenPack Dependencies: 
+    * ZenPack Dependencies:
     * Installation Notes: Restart zenoss
     * Configuration:
 
@@ -46,6 +46,10 @@ Change History
 * 3.5.2
     * Modifications made to services/SLAPerformanceConfig.py and zensla.py by Jane Curry
       to make data collection work
+* 3.5.3
+    * forked from jcurry
+    * streamlined the code for github
+
 
 ===========
 Screenshots
@@ -57,5 +61,3 @@ See the screenshots directory
 .. External References Below. Nothing Below This Line Should Be Rendered
 
 .. _Latest Package for Python 2.7: https://github.com/jcurry/ZenPacks.ShaneScott.ipSLA/blob/master/dist/ZenPacks.ShaneScott.ipSLA-3.5.2-py2.7.egg?raw=true
-
-

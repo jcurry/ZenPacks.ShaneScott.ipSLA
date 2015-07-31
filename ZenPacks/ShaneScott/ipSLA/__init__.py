@@ -424,7 +424,7 @@ class ZenPack(ZenPackBase):
            log.info('CATALOG: Per dontReindexMyStuffZenpack, skipping catalog updates')
 
 
-    def updateGlobalCatalog(self, dmd):  
+    def updateGlobalCatalog(self, dmd):
         log.info('CATALOG: Updating GC [This could take a really long time]')
         # Get global catalog log
         gc_log = logging.getLogger('Zope.ZCatalog')
@@ -448,6 +448,7 @@ class ZenPack(ZenPackBase):
         log.info('DAEMON: Linking daemon into %s' % (zenPath('Products/ZenRRD')))
         os.system('ln -sf %s %s' % (self.path('zensla.py'), zenPath('Products/ZenRRD', 'zensla.py')))
         os.system('chmod 0755 %s' % (zenPath('Products/ZenRRD', 'zensla.py')))
+        log.info('Making daemon executable')
         os.system('chmod a+x %s' % (zenPath('bin', 'zensla')))
 
 
