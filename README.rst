@@ -62,4 +62,4 @@ See the screenshots directory
 
 .. External References Below. Nothing Below This Line Should Be Rendered
 
-.. _Latest Package for Python 2.7: https://github.com/jcurry/ZenPacks.ShaneScott.ipSLA/blob/master/dist/ZenPacks.ShaneScott.ipSLA-3.5.2-py2.7.egg?raw=true
+.. _Latest Package for Python 2.7: https://github.com/jcurry/ZenPacks.ShaneScott.ipSLA/blob/master/dist/ZenPacks.ShaneScott.ipSLA-3.5.4-py2.7.egg?raw=true
