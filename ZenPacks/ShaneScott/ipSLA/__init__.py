@@ -36,7 +36,7 @@ class ZenPack(ZenPackBase):
 
     def install(self, app):
         # Link daemon and hub service
-        self.symlinkPlugin()
+        #self.symlinkPlugin()
 
         # Install menus
         self.installMenuItems(app.zport.dmd, menuName='IPSLA')
@@ -55,6 +55,9 @@ class ZenPack(ZenPackBase):
 
         # Rebuild relations
         self.rebuildRelations(app.zport.dmd)
+
+        # Link daemon and hub service
+        self.symlinkPlugin()
 
         # Start daemon
         self.startDaemon(app.zport.dmd, daemonName='zensla')
@@ -156,9 +159,12 @@ class ZenPack(ZenPackBase):
                 # Log it
                 log.info('DAEMON: Stopping %s daemon', str(daemonName))
                 # Just in case it's not executable for some reason
-                os.system('chmod a+x %s' % (zenPath('bin', str(daemonName))))
-                # Stop daemon
-                os.system('$ZENHOME/bin/%s stop', str(daemonName))
+                daemonfile = zenPath('bin', str(daemonName))
+                if os.path.isfile(daemonfile):
+                    #os.system('chmod a+x %s' % (zenPath('bin', str(daemonName))))
+                    os.system('chmod a+x %s' % (daemonfile))
+                    # Stop daemon
+                    os.system('$ZENHOME/bin/%s stop', str(daemonName))
             except Exception:
                 log.info('DAEMON: Some unknown exception occurred during daemon stop')
                 pass
@@ -173,9 +179,12 @@ class ZenPack(ZenPackBase):
                 # Log it
                 log.info('DAEMON: Starting %s daemon', str(daemonName))
                 # Just in case it's not executable for some reason
-                os.system('chmod a+x %s' % (zenPath('bin', str(daemonName))))
-                # Stop daemon
-                os.system('$ZENHOME/bin/%s start', str(daemonName))
+                daemonfile = zenPath('bin', str(daemonName))
+                if os.path.isfile(daemonfile):
+                    #os.system('chmod a+x %s' % (zenPath('bin', str(daemonName))))
+                    os.system('chmod a+x %s' % (daemonfile))
+                    # Start daemon
+                    os.system('$ZENHOME/bin/%s start', str(daemonName))
             except Exception:
                 log.info('DAEMON: Some unknown exception occurred during daemon start')
                 pass
@@ -447,15 +456,18 @@ class ZenPack(ZenPackBase):
         # Link daemon
         log.info('DAEMON: Linking daemon into %s' % (zenPath('Products/ZenRRD')))
         os.system('ln -sf %s %s' % (self.path('zensla.py'), zenPath('Products/ZenRRD', 'zensla.py')))
-        os.system('chmod 0755 %s' % (zenPath('Products/ZenRRD', 'zensla.py')))
-        log.info('Making daemon executable')
-        os.system('chmod a+x %s' % (zenPath('bin', 'zensla')))
+        if os.path.isfile(zenPath('Products/ZenRRD', 'zensla.py')):
+            os.system('chmod 0755 %s' % (zenPath('Products/ZenRRD', 'zensla.py')))
+            log.info('Making daemon executable')
+            if os.path.isfile(zenPath('bin', 'zensla')):
+                os.system('chmod a+x %s' % (zenPath('bin', 'zensla')))
 
 
     def removePluginSymlink(self):
         # Unlink daemon
         log.info('DAEMON: Removing daemon from %s' % (zenPath('Products/ZenRRD')))
-        os.system('rm -f %s' % (zenPath('Products/ZenRRD', 'zensla.py')))
+        if os.path.isfile(zenPath('Products/ZenRRD', 'zensla.py')):
+            os.system('rm -f %s' % (zenPath('Products/ZenRRD', 'zensla.py')))
 
 
     def removeMenuItems(self, dmd, menuName):

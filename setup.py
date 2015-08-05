@@ -3,7 +3,7 @@
 # or saved.  Do not modify them directly here.
 # NB: PACKAGES is deprecated
 NAME = "ZenPacks.ShaneScott.ipSLA"
-VERSION = "3.5.3"
+VERSION = "3.5.4"
 AUTHOR = "Shane William Scott"
 LICENSE = "GPL v3"
 NAMESPACE_PACKAGES = ['ZenPacks', 'ZenPacks.ShaneScott']

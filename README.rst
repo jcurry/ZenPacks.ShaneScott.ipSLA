@@ -49,6 +49,8 @@ Change History
 * 3.5.3
     * forked from jcurry
     * streamlined the code for github
+* 3.5.4
+    * Jane Curry - Changed order of methods in install in __init__.py
 
 
 ===========
