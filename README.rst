@@ -27,6 +27,8 @@ Requirements & Dependencies
     * External Dependencies:
     * ZenPack Dependencies:
     * Installation Notes: Restart zenoss
+      Note that you may get a message saying "Some unknown problem occured adding device class /Network/Cisco/IPSLA". This
+      appears to be benign and the class is actually added.
     * Configuration:
 
 
