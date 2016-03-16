@@ -461,6 +461,17 @@ class ZenPack(ZenPackBase):
             log.info('Making daemon executable')
             if os.path.isfile(zenPath('bin', 'zensla')):
                 os.system('chmod a+x %s' % (zenPath('bin', 'zensla')))
+            else:
+                fix_message = '''
+                    export TDIR='/opt/zenoss/ZenPacks/ZenPacks.ShaneScott.ipSLA-3.5.4-py2.7.egg/ZenPacks/ShaneScott/ipSLA'
+                    mkdir $TDIR/daemons
+                    cp /export/home/zenoss/zenpacks/cbueche/ZenPacks.ShaneScott.ipSLA/ZenPacks/ShaneScott/ipSLA/daemons/zensla $TDIR/daemons/
+                    chmod 0755 $TDIR/daemons/zensla
+                    ln -s $TDIR/daemons/zensla $ZENHOME/bin/
+                '''
+                log.error('%s is not a file, was the daemon not copied by the zenpack installation ? Fix manually with %s and restart zenoss' % (zenPath('bin', 'zensla'), fix_message))
+        else:
+            log.error('%s is not a file' % zenPath('Products/ZenRRD', 'zensla.py'))
 
 
     def removePluginSymlink(self):
