@@ -461,6 +461,10 @@ class ZenPack(ZenPackBase):
             log.info('Making daemon executable')
             if os.path.isfile(zenPath('bin', 'zensla')):
                 os.system('chmod a+x %s' % (zenPath('bin', 'zensla')))
+            else:
+                log.error('%s is not a file' % zenPath('bin', 'zensla'))
+        else:
+            log.error('%s is not a file' % zenPath('Products/ZenRRD', 'zensla.py'))
 
 
     def removePluginSymlink(self):
