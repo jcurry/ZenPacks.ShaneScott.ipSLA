@@ -23,13 +23,12 @@ A new device class, /Network/Cisco/IPSLA is created with modeler plugins assigne
 Requirements & Dependencies
 ===========================
 
-    * Zenoss Versions Supported: 4.x - tested against Zenoss Core 4.2.5 SUP 457
-    * External Dependencies:
-    * ZenPack Dependencies:
-    * Installation Notes: Restart zenoss
-      Note that you may get a message saying "Some unknown problem occured adding device class /Network/Cisco/IPSLA". This
-      appears to be benign and the class is actually added.
-    * Configuration:
+* Zenoss Versions Supported: 4.x - tested against Zenoss Core 4.2.5 SUP 457
+* External Dependencies:
+* ZenPack Dependencies:
+* Installation Notes: Restart zenoss
+  Note that you may get a message saying "Some unknown problem occured adding device class /Network/Cisco/IPSLA". This appears to be benign and the class is actually added.
+* Configuration: none needed, put your device into /Network/Cisco/IPSLA, the modeler will discover the SLA instances as components and start graphing them.
 
 
 Download
@@ -53,6 +52,8 @@ Change History
     * streamlined the code for github
 * 3.5.4
     * Jane Curry - Changed order of methods in install in __init__.py
+* 3.5.5
+    * Charles Bueche - added MANIFEST.in to create a complete Zenpack, along with some debug code and a new screenshot.
 
 
 ===========
@@ -64,4 +65,4 @@ See the screenshots directory
 
 .. External References Below. Nothing Below This Line Should Be Rendered
 
-.. _Latest Package for Python 2.7: https://github.com/jcurry/ZenPacks.ShaneScott.ipSLA/blob/master/dist/ZenPacks.ShaneScott.ipSLA-3.5.4-py2.7.egg?raw=true
+.. _Latest Package for Python 2.7: https://github.com/jcurry/ZenPacks.ShaneScott.ipSLA/blob/master/dist/ZenPacks.ShaneScott.ipSLA-3.5.5-py2.7.egg?raw=true
