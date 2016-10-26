@@ -23,7 +23,7 @@ A new device class, /Network/Cisco/IPSLA is created with modeler plugins assigne
 Requirements & Dependencies
 ===========================
 
-* Zenoss Versions Supported: 4.x - tested against Zenoss Core 4.2.5 SUP 457
+* Zenoss Versions Supported: 4.x - tested against Zenoss Core 4.2.5 SUP 457 and 671.  Also tested with Zenoss 5.1.5.
 * External Dependencies:
 * ZenPack Dependencies:
 * Installation Notes: Restart zenoss
