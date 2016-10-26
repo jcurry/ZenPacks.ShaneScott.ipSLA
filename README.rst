@@ -39,6 +39,11 @@ below.
 * Zenoss 4.0+ `Latest Package for Python 2.7`_
 
 
+Installation
+============
+
+Glitches have been seen during the installation process.  Attempting a second install is often successful.
+
 
 Change History
 ==============
